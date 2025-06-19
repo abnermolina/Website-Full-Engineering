@@ -1,6 +1,25 @@
 import logoTopBar from "../assets/logoTopBar.png";
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
 
 export function TopBar() {
+  const { t, i18n } = useTranslation();
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "es" : "en");
+  };
   return (
     <header
       style={{
@@ -25,38 +44,33 @@ export function TopBar() {
         />
       </div>
 
-      <nav style={{ display: "flex", gap: "24px" }}>
-        <a href="#inicio" style={{ color: "#fff", textDecoration: "none" }}>
-          Inicio
-        </a>
-        <a
-          href="#sobre-nosotros"
-          style={{ color: "#fff", textDecoration: "none" }}
-        >
-          Sobre Nosotros
-        </a>
-        <a href="#servicios" style={{ color: "#fff", textDecoration: "none" }}>
-          Servicios
-        </a>
-        <a href="#proyectos" style={{ color: "#fff", textDecoration: "none" }}>
-          Proyectos
-        </a>
-      </nav>
+      <div>
+        <NavigationMenu className="mr-4">
+          <NavigationMenuList>
+            {["home", "about", "services", "projects"].map((key) => (
+              <NavigationMenuItem key={key}>
+                <a
+                  href={`#${key}`}
+                  className={cn(navigationMenuTriggerStyle(), "text-md")}
+                >
+                  {t(`nav.${key}`)}
+                </a>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
 
-      <button
-        style={{
-          backgroundColor: "#007BFF",
-          color: "#fff",
-          border: "none",
-          padding: "8px 16px",
-          borderRadius: "4px",
-          cursor: "pointer",
-          fontWeight: 500,
-          fontSize: "1rem",
-        }}
-      >
-        Contáctanos
-      </button>
+      <div className="flex items-center space-x-2">
+        <Button onClick={toggleLang}>
+          {i18n.language === "en"
+            ? t("language.toggle_es")
+            : t("language.toggle_en")}
+        </Button>
+        <Button className="bg-[#0D1F5F] text-lg hover:bg-blue-900">
+          {t("nav.contact")}
+        </Button>
+      </div>
     </header>
   );
 }

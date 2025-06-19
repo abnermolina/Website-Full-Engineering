@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre Nosotros",
+    "services": "Servicios",
+    "projects": "Proyectos",
+    "contact": "Contáctanos"
+  },
+  "carousel": {
+    "prefix": "Somos",
+    "words": ["ingenieros.", "inventores.", "líderes.", "Full Engineering."]
+  },
+  "language": {
+    "toggle_en": "EN",
+    "toggle_es": "ES"
+  }
+}
