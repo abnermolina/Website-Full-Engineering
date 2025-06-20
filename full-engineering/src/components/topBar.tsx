@@ -47,16 +47,24 @@ export function TopBar() {
       <div>
         <NavigationMenu className="mr-4">
           <NavigationMenuList>
-            {["home", "about", "services", "projects"].map((key) => (
-              <NavigationMenuItem key={key}>
-                <a
-                  href={`#${key}`}
-                  className={cn(navigationMenuTriggerStyle(), "text-md")}
-                >
-                  {t(`nav.${key}`)}
-                </a>
-              </NavigationMenuItem>
-            ))}
+            {["home", "about", "services", "projects"].map((key) => {
+              const href =
+                key === "home"
+                  ? "#"
+                  : key === "about"
+                  ? "#about-us"
+                  : `#${key}`;
+              return (
+                <NavigationMenuItem key={key}>
+                  <a
+                    href={href}
+                    className={cn(navigationMenuTriggerStyle(), "text-md")}
+                  >
+                    {t(`nav.${key}`)}
+                  </a>
+                </NavigationMenuItem>
+              );
+            })}
           </NavigationMenuList>
         </NavigationMenu>
       </div>

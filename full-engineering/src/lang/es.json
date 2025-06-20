@@ -8,10 +8,48 @@
   },
   "carousel": {
     "prefix": "Somos",
-    "words": ["ingenieros.", "inventores.", "líderes.", "Full Engineering."]
+    "words": ["Full Engineering.", "líderes.", "innovadores.", "ingenieros."]
   },
   "language": {
     "toggle_en": "EN",
     "toggle_es": "ES"
-  }
+  },
+
+  "about": {
+    "heading": "Sobre Nosotros",
+    "tagline": "MÁS DE 18 AÑOS DE EXPERIENCIA",
+    "visionTitle": "Visión",
+    "visionText": "Nos proyectamos como líderes en ingeniería electromecánica, civil y construcción, destacándonos por ofrecer soluciones innovadoras y de alta calidad que satisfacen las necesidades de nuestros clientes. Nuestro enfoque en la excelencia, la seguridad y la mejora continua nos posiciona como referentes a nivel nacional e internacional, contribuyendo al desarrollo sostenible y al bienestar de la sociedad."
+  },
+  "mission": {
+    "heading": "Misión",
+    "text": "Nos comprometemos a brindar soluciones integrales en ingeniería y construcción, superando las expectativas de nuestros clientes mediante altos estándares de calidad, seguridad y eficiencia. Nos especializamos en proyectos multidisciplinarios, desde instalaciones industriales hasta obras de infraestructura, con un enfoque en la innovación y la sostenibilidad. Nuestra misión es generar valor a largo plazo para nuestros clientes, colaboradores y la sociedad, contribuyendo al desarrollo responsable y al fortalecimiento de la industria."
+  },
+  "values": {
+    "heading": "Nuestros Valores",
+    "list": [
+      "Compromiso",
+      "Profesionalismo",
+      "Excelencia",
+      "Honestidad",
+      "Dedicación",
+      "Trato Justo",
+      "Trabajo en Equipo",
+      "Calidad",
+      "Trabajar con Seguridad",
+      "Respeto",
+      "Integridad",
+      "Diligencia",
+      "Solidaridad"
+    ]
+  },
+  "locations": [
+    "Honduras",
+    "Guatemala",
+    "El Caribe",
+    "Costa Rica",
+    "El Salvador",
+    "Bolivia"
+  ],
+  "services": "Servicios"
 }

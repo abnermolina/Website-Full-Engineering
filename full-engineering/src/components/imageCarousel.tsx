@@ -25,21 +25,23 @@ export function ImageCarousel() {
           : currentWord.substring(0, prev.length + 1)
       );
 
-      // Faster when deleting
       speedRef.current = isDeleting ? 100 : 180;
 
-      // When word fully typed, start deleting after a pause
       if (!isDeleting && text === currentWord) {
         setTimeout(() => setIsDeleting(true), 1500);
-      }
-      // When word fully deleted
-      else if (isDeleting && text === "") {
+      } else if (isDeleting && text === "") {
         setIsDeleting(false);
-        // After completing the last word in the loop, advance the slide
-        if (wordIndex % words.length === words.length - 1) {
-          setCurrentImage((idx) => (idx + 1) % images.length);
+
+        // compute next wordIndex
+        const nextWordIndex = wordIndex + 1;
+
+        // ➡️ advance only on every 2nd word
+        if (nextWordIndex % 2 === 0) {
+          setCurrentImage((img) => (img + 1) % images.length);
         }
-        setWordIndex((idx) => idx + 1);
+
+        // now bump the index
+        setWordIndex(nextWordIndex);
       }
     };
 

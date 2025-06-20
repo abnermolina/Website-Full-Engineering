@@ -8,10 +8,47 @@
   },
   "carousel": {
     "prefix": "We are",
-    "words": ["engineers.", "inventors.", "leaders.", "Full Engineering."]
+    "words": ["Full Engineering.", "leaders.", "innovators.", "engineers."]
   },
   "language": {
     "toggle_en": "EN",
     "toggle_es": "ES"
-  }
+  },
+  "about": {
+    "heading": "About Us",
+    "tagline": "OVER 18 YEARS OF EXPERIENCE",
+    "visionTitle": "Vision",
+    "visionText": "We see ourselves as leaders in electromechanical, civil and construction engineering, distinguished by innovative, high-quality solutions that meet our clients’ needs. Our focus on excellence, safety and continuous improvement positions us as a national and international reference, contributing to sustainable development and societal well-being."
+  },
+  "mission": {
+    "heading": "Mission",
+    "text": "We are committed to delivering comprehensive engineering and construction solutions, exceeding our clients’ expectations through the highest standards of quality, safety, and efficiency. We specialize in multidisciplinary projects—from industrial facilities to infrastructure works—with a focus on innovation and sustainability. Our mission is to generate long-term value for our clients, partners, and society, contributing to responsible development and the strengthening of the industry."
+  },
+  "values": {
+    "heading": "Our Values",
+    "list": [
+      "Commitment",
+      "Professionalism",
+      "Excellence",
+      "Honesty",
+      "Dedication",
+      "Fair Treatment",
+      "Teamwork",
+      "Quality",
+      "Safety First",
+      "Respect",
+      "Integrity",
+      "Diligence",
+      "Solidarity"
+    ]
+  },
+  "locations": [
+    "Honduras",
+    "Guatemala",
+    "The Caribbean",
+    "Costa Rica",
+    "El Salvador",
+    "Bolivia"
+  ],
+  "services": "Services"
 }
