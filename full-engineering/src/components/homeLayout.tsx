@@ -20,7 +20,7 @@ export function HomeLayout() {
       <Services />
 
       {/* 2) the rest of your page — scrollable into view */}
-      <main className="relative z-10 p-8">
+      <main>
         <Outlet />
       </main>
     </div>
