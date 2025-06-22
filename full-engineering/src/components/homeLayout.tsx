@@ -3,6 +3,7 @@ import { TopBar } from "./topBar";
 import { ImageCarousel } from "./imageCarousel";
 import { AboutUs } from "../components/aboutUs";
 import { Services } from "./services";
+import { Projects } from "./projects";
 
 export function HomeLayout() {
   return (
@@ -18,6 +19,7 @@ export function HomeLayout() {
 
       <AboutUs />
       <Services />
+      <Projects />
 
       {/* 2) the rest of your page — scrollable into view */}
       <main>

@@ -1,24 +1,41 @@
 import { useTranslation } from "react-i18next";
-import vectorObrasCiviles from "@/assets/vectorObrasCiviles.png";
-import vectorObrasMecanicas from "@/assets/vectorObrasMecanicas.png";
+import vectorObrasCiviles from "@/assets/vectorObrasCivilesES.png";
+import vectorObrasMecanicas from "@/assets/vectorObrasMecanicasES.png";
 import obrasCiviles from "@/assets/obrasCiviles.png";
 import obrasMecanicas from "@/assets/obrasMecanicas.png";
 import garantias from "@/assets/garantias.png";
-import vectorGarantias from "@/assets/vectorGarantias.png";
+import vectorGarantias from "@/assets/vectorGarantiasES.png";
 import obrasElectricas from "@/assets/obrasElectricas.png";
-import vectorObrasElectricas from "@/assets/vectorObrasElectricas.png";
+import vectorObrasElectricas from "@/assets/vectorObrasElectricasES.png";
 import mantenimiento from "@/assets/mantenimiento.png";
-import vectorMantenimiento from "@/assets/vectorMantenimiento.png";
+import vectorMantenimiento from "@/assets/vectorMantenimientoES.png";
+
+import vectorCivilWorksEN from "@/assets/civilWorksVector.png";
+import vectorMechWorksEN from "@/assets/mechanicalWorksVector.png";
+import vectorWarrantiesEN from "@/assets/warrantiesVector.png";
+import vectorElecWorksEN from "@/assets/electricalWorksVector.png";
+import vectorMaintenanceEN from "@/assets/maintenaceVector.png";
 
 export function Services() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const vectorCivil =
+    i18n.resolvedLanguage === "es" ? vectorObrasCiviles : vectorCivilWorksEN;
+  const vectorMech =
+    i18n.resolvedLanguage === "es" ? vectorObrasMecanicas : vectorMechWorksEN;
+  const vectorWarranty =
+    i18n.resolvedLanguage === "es" ? vectorGarantias : vectorWarrantiesEN;
+  const vectorElec =
+    i18n.resolvedLanguage === "es" ? vectorObrasElectricas : vectorElecWorksEN;
+  const vectorMaint =
+    i18n.resolvedLanguage === "es" ? vectorMantenimiento : vectorMaintenanceEN;
 
   return (
     <div>
       {/* — your existing “Services” header — */}
       <section
         id="services"
-        className="scroll-mt-0 relative bg-white py-16 px-4 md:px-20"
+        className="scroll-mt-2 relative bg-white py-16 px-4 md:px-20"
       >
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-left items-center">
           <div>
@@ -45,7 +62,7 @@ export function Services() {
             />
             <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
             <img
-              src={vectorObrasCiviles}
+              src={vectorCivil}
               className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
             ></img>
           </div>
@@ -59,7 +76,7 @@ export function Services() {
             />
             <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
             <img
-              src={vectorObrasMecanicas}
+              src={vectorMech}
               className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
             ></img>
           </div>
@@ -67,7 +84,7 @@ export function Services() {
       </div>
 
       {/*SECOND ROW OF IMAGES */}
-      <div className="h-40 mt-60 overflow-visible w-full">
+      <div className="h-40 mt-60 mb-40 overflow-visible w-full">
         <div className="absolute left-0 h-40 w-screen overflow-hidden -z-10 bg-[#0D1F5F]" />
 
         {/* image row */}
@@ -81,9 +98,9 @@ export function Services() {
             />
             <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
             <img
-              src={vectorObrasElectricas}
+              src={vectorElec}
               alt=""
-              className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
+              className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
             />
           </div>
 
@@ -96,9 +113,9 @@ export function Services() {
             />
             <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
             <img
-              src={vectorMantenimiento}
+              src={vectorMaint}
               alt=""
-              className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
+              className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
             />
           </div>
 
@@ -111,9 +128,9 @@ export function Services() {
             />
             <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
             <img
-              src={vectorGarantias}
+              src={vectorWarranty}
               alt=""
-              className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
+              className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
             />
           </div>
         </div>
