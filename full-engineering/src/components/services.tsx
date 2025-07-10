@@ -30,6 +30,14 @@ export function Services() {
   const vectorMaint =
     i18n.resolvedLanguage === "es" ? vectorMantenimiento : vectorMaintenanceEN;
 
+  const services = [
+    { img: obrasCiviles, icon: vectorCivil, alt: t("services.civil") },
+    { img: obrasMecanicas, icon: vectorMech, alt: t("services.mechanical") },
+    { img: obrasElectricas, icon: vectorElec, alt: t("services.electrical") },
+    { img: mantenimiento, icon: vectorMaint, alt: t("services.maintenance") },
+    { img: garantias, icon: vectorWarranty, alt: t("services.warranty") },
+  ];
+
   return (
     <div>
       {/* — your existing “Services” header — */}
@@ -46,94 +54,105 @@ export function Services() {
         </div>
       </section>
 
-      {/* — blue bar + overlapping images — */}
-      <div className="w-full mt-10 h-40 overflow-visible">
-        {/* full-width bar */}
-        <div className="absolute left-0 h-40 w-screen overflow-hidden -z-10 bg-[#0D1F5F]" />
-
-        {/* images row, same height as the bar, centered vertically */}
-        <div className="relative h-full max-w-7xl mx-auto flex justify-center items-center space-x-8">
-          {/* Obras Civiles */}
-          <div className="relative z-10">
-            <img
-              src={obrasCiviles}
-              alt="Obras Civiles"
-              className="w-96 rounded-lg shadow-lg object-cover"
-            />
-            <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
-            <img
-              src={vectorCivil}
-              className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
-            ></img>
+      {/* — md+ only: blue bar + overlapping images — */}
+      <div className="hidden md:block">
+        {/* first row (exactly your original code) */}
+        <div className="w-full mt-10 h-40 overflow-visible">
+          <div className="absolute left-0 h-40 w-screen overflow-hidden -z-10 bg-[#0D1F5F]" />
+          <div className="relative h-full max-w-7xl mx-auto flex justify-center items-center space-x-8">
+            {/* Obras Civiles */}
+            <div className="relative z-10">
+              <img
+                src={obrasCiviles}
+                alt="Obras Civiles"
+                className="w-96 rounded-lg shadow-lg object-cover"
+              />
+              <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
+              <img
+                src={vectorCivil}
+                className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
+              />
+            </div>
+            {/* Obras Mecánicas */}
+            <div className="relative z-10">
+              <img
+                src={obrasMecanicas}
+                alt="Obras Mecánicas"
+                className="w-96 rounded-lg shadow-lg object-cover"
+              />
+              <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
+              <img
+                src={vectorMech}
+                className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
+              />
+            </div>
           </div>
+        </div>
 
-          {/* Obras Mecánicas */}
-          <div className="relative z-10">
-            <img
-              src={obrasMecanicas}
-              alt="Obras Mecánicas"
-              className="w-96 rounded-lg shadow-lg object-cover"
-            />
-            <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
-            <img
-              src={vectorMech}
-              className="absolute inset-0 w-8/12 h-8/12 m-auto object-contain pointer-events-none"
-            ></img>
+        {/* second row (exactly your original code) */}
+        <div className="h-40 mt-60 mb-40 overflow-visible w-full">
+          <div className="absolute left-0 h-40 w-screen overflow-hidden -z-10 bg-[#0D1F5F]" />
+          <div className="relative h-full max-w-7xl mx-auto flex justify-center items-center space-x-8">
+            <div className="relative">
+              <img
+                src={obrasElectricas}
+                alt="Obras Eléctricas"
+                className="w-80 rounded-lg shadow-lg object-cover"
+              />
+              <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
+              <img
+                src={vectorElec}
+                alt=""
+                className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
+              />
+            </div>
+            <div className="relative">
+              <img
+                src={mantenimiento}
+                alt="Mantenimiento"
+                className="w-80 rounded-lg shadow-lg object-cover"
+              />
+              <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
+              <img
+                src={vectorMaint}
+                alt=""
+                className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
+              />
+            </div>
+            <div className="relative">
+              <img
+                src={garantias}
+                alt="Garantías"
+                className="w-80 rounded-lg shadow-lg object-cover"
+              />
+              <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
+              <img
+                src={vectorWarranty}
+                alt=""
+                className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
+              />
+            </div>
           </div>
         </div>
       </div>
 
-      {/*SECOND ROW OF IMAGES */}
-      <div className="h-40 mt-60 mb-40 overflow-visible w-full">
-        <div className="absolute left-0 h-40 w-screen overflow-hidden -z-10 bg-[#0D1F5F]" />
-
-        {/* image row */}
-        <div className="relative h-full max-w-7xl mx-auto flex justify-center items-center space-x-8">
-          {/* --- Obras Civiles --- */}
-          <div className="relative">
+      {/* — small only: single-column cards, no blue bars — */}
+      <div className="block md:hidden px-4 space-y-8">
+        {services.map((svc, i) => (
+          <div key={i} className="relative mx-auto max-w-xs">
             <img
-              src={obrasElectricas}
-              alt="Obras Civiles"
-              className="w-80 rounded-lg shadow-lg object-cover"
+              src={svc.img}
+              alt={svc.alt}
+              className="w-full rounded-lg shadow-lg object-cover"
             />
             <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
             <img
-              src={vectorElec}
+              src={svc.icon}
               alt=""
-              className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
+              className="absolute inset-0 w-2/3 h-2/3 m-auto object-contain pointer-events-none"
             />
           </div>
-
-          {/* --- Obras Mecánicas --- */}
-          <div className="relative">
-            <img
-              src={mantenimiento}
-              alt="Obras Mecánicas"
-              className="w-80 rounded-lg shadow-lg object-cover"
-            />
-            <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
-            <img
-              src={vectorMaint}
-              alt=""
-              className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
-            />
-          </div>
-
-          {/* --- Obras Eléctricas (third image) --- */}
-          <div className="relative">
-            <img
-              src={garantias}
-              alt="Obras Eléctricas"
-              className="w-80 rounded-lg shadow-lg object-cover"
-            />
-            <div className="absolute inset-0 bg-[#FAFAFA] opacity-50 rounded-lg" />
-            <img
-              src={vectorWarranty}
-              alt=""
-              className="absolute inset-0 w-9/12 h-9/12 m-auto object-contain pointer-events-none"
-            />
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

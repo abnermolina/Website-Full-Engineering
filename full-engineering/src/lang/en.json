@@ -51,5 +51,10 @@
     "Bolivia"
   ],
   "services": "Services",
-  "projects": "Projects"
+  "projects": "Projects",
+  "contactUs": "Contact Us",
+  "name": "Name",
+  "email": "Email",
+  "message": "Message",
+  "send": "Send"
 }
