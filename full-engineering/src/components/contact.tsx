@@ -47,7 +47,7 @@ export function ContactUs() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const recipient = "asamuel2004@outlook.com";
+    const recipient = "team@full-engineering.com";
     const subject = encodeURIComponent(`Contact from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
