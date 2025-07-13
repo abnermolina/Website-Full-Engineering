@@ -62,28 +62,24 @@ export function ContactUs() {
   return (
     <div>
       <section
-        id="contactUs"
-        className="scroll-mt-2 relative bg-white mt-16 mb-10 px-4 md:px-20"
+        id="contact-us"
+        className="scroll-mt-2 relative bg-white  mb-2 px-4 md:px-20"
       >
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-left items-center">
           <div>
             <h2 className="inline-block bg-[#0D1F5F] text-white rounded-sm px-4 py-2 text-3xl md:text-4xl font-bold mb-2">
-              {t("contactUs")}
+              {t("contact.contactUs")}
             </h2>
           </div>
         </div>
       </section>
       {/* ── Section header ─────────────────────── */}
-      <section className="realtive overflow-hidden px-4 md:px-20">
-        <img
-          src={contactImg}
-          className="absolute hidden rounded-lg lg:block w-[800px] h-auto -z-10"
-        ></img>
+      <section className="realtive overflow-hidden px-4 pb-16 md:px-20">
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-center">
           {/* Title */}
           <div className="w-full max-w-lg">
             <p className="text-4xl text-left font-bold text-[#0D1F5F]">
-              Let's work together!
+              {t("contact.phrase")}
             </p>
             <div className="mt-4">
               <div className="flex-1 flex items-center order-1 xl:order-none mb-8 xl:mb-0">
@@ -127,7 +123,7 @@ export function ContactUs() {
                 <Input
                   required
                   name="name"
-                  placeholder={t("Name")}
+                  placeholder={t("contact.name")}
                   value={form.name}
                   onChange={handleChange}
                   className="text-white"
@@ -136,7 +132,7 @@ export function ContactUs() {
                   required
                   type="email"
                   name="email"
-                  placeholder={t("Email")}
+                  placeholder={t("contact.email")}
                   value={form.email}
                   onChange={handleChange}
                   className="text-white"
@@ -144,7 +140,7 @@ export function ContactUs() {
                 <Textarea
                   required
                   name="message"
-                  placeholder={t("Message")}
+                  placeholder={t("contact.message")}
                   rows={15}
                   value={form.message}
                   onChange={handleChange}
@@ -157,7 +153,7 @@ export function ContactUs() {
                   type="submit"
                   className="w-full space-y-4 bg-white text-[#0D1F5F] font-bold hover:opacity-90"
                 >
-                  {t("send")}
+                  {t("contact.send")}
                 </Button>
               </CardFooter>
             </form>

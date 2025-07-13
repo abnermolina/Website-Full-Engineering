@@ -81,7 +81,7 @@ export function AboutUs() {
       </section>
 
       {/* VALUES */}
-      <section id="values" className="relative bg-white py-16 px-4 md:px-20">
+      <section id="values" className="relative bg-white pb-16 px-4 md:px-20">
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-start justify-items-center">
           <div>
             <h2 className="text-2xl text-left font-semibold mb-7">

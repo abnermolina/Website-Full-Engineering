@@ -75,9 +75,11 @@ export function TopBar() {
             ? t("language.toggle_es")
             : t("language.toggle_en")}
         </Button>
-        <Button className="bg-[#0D1F5F] text-lg hover:bg-blue-900">
-          {t("nav.contact")}
-        </Button>
+        <a href="#contact-us" className="focus:outline-none">
+          <Button className="bg-[#0D1F5F] text-lg hover:bg-blue-900">
+            {t("nav.contact")}
+          </Button>
+        </a>
       </div>
     </header>
   );

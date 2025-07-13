@@ -53,9 +53,12 @@
   ],
   "services": "Servicios",
   "projects": "Proyectos",
-  "contactUs": "Contáctanos",
-  "name": "Nombre",
-  "email": "Correo electrónico",
-  "message": "Mensaje",
-  "send": "Enviar"
+  "contact": {
+    "contactUs": "Contáctanos",
+    "name": "Nombre",
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "send": "Enviar",
+    "phrase": "Trabajemos Juntos!"
+  }
 }

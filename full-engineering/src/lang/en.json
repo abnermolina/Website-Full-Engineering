@@ -52,9 +52,12 @@
   ],
   "services": "Services",
   "projects": "Projects",
-  "contactUs": "Contact Us",
-  "name": "Name",
-  "email": "Email",
-  "message": "Message",
-  "send": "Send"
+  "contact": {
+    "contactUs": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "phrase": "Let's Work Together!"
+  }
 }
