@@ -43,7 +43,7 @@ export function Services() {
       {/* — your existing “Services” header — */}
       <section
         id="services"
-        className="scroll-mt-4 relative bg-white md:py-16 px-4 md:px-20"
+        className="scroll-mt-22 md:scroll-mt-4 relative bg-white md:py-16 px-4 md:px-20"
       >
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-left items-center">
           <div>

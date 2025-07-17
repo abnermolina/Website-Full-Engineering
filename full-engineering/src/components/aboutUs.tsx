@@ -58,7 +58,7 @@ export function AboutUs() {
 
       {/* MISSION */}
       <section id="mission" className="relative bg-white py-16 px-4 md:px-20">
-        <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-right items-center">
+        <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-left md:text-right items-center">
           <div className="relative w-full overflow-visible">
             <img
               src={liftMotorImg}
