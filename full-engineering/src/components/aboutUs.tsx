@@ -1,5 +1,4 @@
 // src/components/AboutUs.tsx
-import React from "react";
 import { useTranslation } from "react-i18next";
 import liftImage from "../assets/lift.png"; // your worker photo
 import hexagonDesign from "../assets/hexagons 1.png"; // your hexagon overlay
