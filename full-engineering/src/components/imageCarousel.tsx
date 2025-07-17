@@ -63,7 +63,7 @@ export function ImageCarousel() {
       ))}
 
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg">
+        <h1 className="text-4xl md:text-7xl font-bold text-white drop-shadow-lg">
           {prefix} <span className="border-r-2 border-white pr-2">{text}</span>
         </h1>
       </div>
