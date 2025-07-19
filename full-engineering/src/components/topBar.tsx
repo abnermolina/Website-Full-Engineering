@@ -6,6 +6,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import { Menu } from "lucide-react";
@@ -28,26 +29,29 @@ export function TopBar() {
         backdropFilter: "saturate(180%) blur(8px)",
       }}
     >
-      {/* Mobile: hamburger + logo */}
-      <div className="flex items-center justify-between p-4 md:hidden">
-        <button
-          onClick={() => setMobileMenuOpen((o) => !o)}
-          aria-label="Toggle menu"
-        >
-          <Menu className="h-6 w-6 text-gray-800" />
-        </button>
-        <img src={logoTopBar} alt="Full Engineering Logo" className="h-10" />
-        <Button onClick={toggleLang}>
-          {i18n.language === "en"
-            ? t("language.toggle_es")
-            : t("language.toggle_en")}
-        </Button>
-      </div>
+      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+        {/* Trigger: hamburger button */}
+        <div className="flex items-center justify-between p-4 md:hidden">
+          <SheetTrigger asChild>
+            <button aria-label="Toggle menu">
+              <Menu className="h-6 w-6 text-gray-800" />
+            </button>
+          </SheetTrigger>
+          <img src={logoTopBar} alt="Full Engineering Logo" className="h-10" />
+          <Button onClick={toggleLang}>
+            {i18n.language === "en"
+              ? t("language.toggle_es")
+              : t("language.toggle_en")}
+          </Button>
+        </div>
 
-      {/* Mobile menu panel */}
-      {mobileMenuOpen && (
-        <nav className="md:hidden bg-white shadow-md">
-          <ul className="flex flex-col p-4 space-y-2">
+        {/* Mobile menu content */}
+        <SheetContent
+          side="left"
+          className="w-3/4 p-4"
+          style={{ backgroundColor: "rgba(219, 219, 219, 0.95)" }}
+        >
+          <ul className="space-y-4">
             {["home", "about", "services", "projects", "contact"].map((key) => {
               const href =
                 key === "home"
@@ -61,8 +65,8 @@ export function TopBar() {
                 <li key={key}>
                   <a
                     href={href}
-                    className="block text-lg font-medium text-gray-700 hover:text-blue-600"
                     onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-medium text-gray-700 hover:text-blue-600 block text-shadow-accent"
                   >
                     {t(`nav.${key}`)}
                   </a>
@@ -70,8 +74,8 @@ export function TopBar() {
               );
             })}
           </ul>
-        </nav>
-      )}
+        </SheetContent>
+      </Sheet>
 
       {/* Desktop / Tablet */}
       <div className="hidden md:flex items-center justify-between px-8 py-2">
