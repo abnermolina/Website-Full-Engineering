@@ -18,12 +18,12 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "+504 2556-7906 | +504 9991-3234",
+    description: ["+504 2556-7906", "+504 9991-3234"],
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "heskelsen@fullengr.com",
+    description: ["heskelsen@fullengr.com"],
   },
 ];
 
@@ -93,7 +93,13 @@ export function ContactUs() {
                         </div>
                         <div className="flex-1 flex flex-col justify-center">
                           <p className="text-md text-gray-500">{item.title}</p>
-                          <h3 className="text-xl">{item.description}</h3>
+                          <div className="flex flex-col">
+                            {item.description.map((line, i) => (
+                              <h3 key={i} className="text-xl leading-snug">
+                                {line}
+                              </h3>
+                            ))}
+                          </div>
                         </div>
                       </li>
                     );
