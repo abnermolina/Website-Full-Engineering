@@ -37,6 +37,11 @@ export function TopBar() {
           <Menu className="h-6 w-6 text-gray-800" />
         </button>
         <img src={logoTopBar} alt="Full Engineering Logo" className="h-10" />
+        <Button onClick={toggleLang}>
+          {i18n.language === "en"
+            ? t("language.toggle_es")
+            : t("language.toggle_en")}
+        </Button>
       </div>
 
       {/* Mobile menu panel */}
@@ -64,13 +69,6 @@ export function TopBar() {
                 </li>
               );
             })}
-            <li>
-              <button onClick={toggleLang} className="text-gray-700">
-                {i18n.language === "en"
-                  ? t("language.toggle_es")
-                  : t("language.toggle_en")}
-              </button>
-            </li>
           </ul>
         </nav>
       )}
