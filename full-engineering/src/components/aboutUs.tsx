@@ -81,13 +81,13 @@ export function AboutUs() {
 
       {/* VALUES */}
       <section id="values" className="relative bg-white pb-16 px-4 md:px-20">
-        <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-start justify-items-center">
+        <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 items-center sm:justify-items-center justify-items-start">
           <div>
             <h2 className="text-2xl text-left font-semibold mb-7">
               {t("values.heading")}
             </h2>
 
-            <ul className="list-none text-left space-y-4 text-base leading-relaxed">
+            <ul className="list-none text-left space-y-4 text-base leading-relaxed grid grid-cols-2 gap-x-4">
               {valuesList.map((val, i) => (
                 <li key={i}>{val}</li>
               ))}
