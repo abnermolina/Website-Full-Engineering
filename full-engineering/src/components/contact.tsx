@@ -20,12 +20,12 @@ const info = [
   {
     icon: <FaPhoneAlt />,
     title: "Phone",
-    description: "(XYZ)-ABC-DEFG",
+    description: "+504 2556-7906 | +504 9991-3234",
   },
   {
     icon: <FaEnvelope />,
     title: "Email",
-    description: "team@full-engineering.com",
+    description: "heskelsen@fullengr.com",
   },
 ];
 
@@ -47,7 +47,7 @@ export function ContactUs() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    const recipient = "team@full-engineering.com";
+    const recipient = "heskelsen@fullengr.com";
     const subject = encodeURIComponent(`Contact from ${form.name}`);
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
