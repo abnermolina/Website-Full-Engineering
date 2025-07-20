@@ -61,7 +61,7 @@ export function ContactUs() {
     <div>
       <section
         id="contact-us"
-        className="scroll-mt-2 relative bg-white mb-2 px-4 md:px-20"
+        className="scroll-mt-22 md:scroll-mt-4 relative bg-white mb-2 px-4 md:px-20"
       >
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-left items-center">
           <div>

@@ -20,6 +20,24 @@ export function TopBar() {
   };
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleClose = () => {
+    setIsClosing(true);
+    // after the 300ms exit animation:
+    setTimeout(() => {
+      setIsClosing(false);
+      setMobileMenuOpen(false);
+    }, 200);
+  };
+
+  const handleToggle = () => {
+    if (mobileMenuOpen) {
+      handleClose(); // run the exit animation + unmount
+    } else {
+      setMobileMenuOpen(true); // immediately mount + enter animation
+    }
+  };
 
   return (
     <header
@@ -31,10 +49,7 @@ export function TopBar() {
     >
       {/* Mobile: hamburger + logo */}
       <div className="flex items-center justify-between p-4 md:hidden">
-        <button
-          onClick={() => setMobileMenuOpen((o) => !o)}
-          aria-label="Toggle menu"
-        >
+        <button onClick={handleToggle} aria-label="Toggle menu">
           <Menu className="h-6 w-6 text-gray-800" />
         </button>
         <a href="#">
@@ -52,10 +67,13 @@ export function TopBar() {
         createPortal(
           <div
             className="fixed inset-0 bg-transparent z-40 md:hidden"
-            onClick={() => setMobileMenuOpen(false)} // close when clicking the background
+            onClick={handleClose} // close when clicking the background
           >
             <nav
-              className="absolute top-[60px] left-0 right-0 bg-white shadow-md z-50"
+              className={`
+                absolute top-[60px] left-0 right-0 bg-white shadow-md z-50
+                ${isClosing ? "animate-slide-up" : "animate-slide-down"}
+              `}
               onClick={(e) => e.stopPropagation()} // prevent close when clicking inside nav
             >
               <ul className="flex flex-col p-4 space-y-2">
@@ -74,7 +92,7 @@ export function TopBar() {
                         <a
                           href={href}
                           className="block text-lg text-center font-medium text-gray-700 hover:text-blue-600"
-                          onClick={() => setMobileMenuOpen(false)}
+                          onClick={handleClose}
                         >
                           {t(`nav.${key}`)}
                         </a>
