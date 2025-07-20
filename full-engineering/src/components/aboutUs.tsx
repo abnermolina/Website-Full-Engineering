@@ -20,7 +20,7 @@ export function AboutUs() {
       {/* VISION */}
       <section
         id="about-us"
-        className="scroll-mt-4 sm:scroll-mt-10 relative bg-white pb-16 pt-6 sm:py-16 px-4 md:px-20"
+        className="scroll-mt-4 sm:scroll-mt-10 relative bg-white pb-16 pt-4 sm:py-16 px-4 md:px-20"
       >
         <div className="max-w-7xl mx-auto grid gap-8 md:grid-cols-2 text-left items-center">
           {/* TEXT BLOCK */}
