@@ -6,7 +6,7 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { createPortal } from "react-dom";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import { Menu } from "lucide-react";
@@ -29,59 +29,76 @@ export function TopBar() {
         backdropFilter: "saturate(180%) blur(8px)",
       }}
     >
-      <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-        {/* Trigger: hamburger button */}
-        <div className="flex items-center justify-between p-4 md:hidden">
-          <SheetTrigger asChild>
-            <button aria-label="Toggle menu">
-              <Menu className="h-6 w-6 text-gray-800" />
-            </button>
-          </SheetTrigger>
-          <img src={logoTopBar} alt="Full Engineering Logo" className="h-10" />
-          <Button onClick={toggleLang}>
-            {i18n.language === "en"
-              ? t("language.toggle_es")
-              : t("language.toggle_en")}
-          </Button>
-        </div>
-
-        {/* Mobile menu content */}
-        <SheetContent
-          side="left"
-          className="w-3/4 p-4"
-          style={{ backgroundColor: "rgba(219, 219, 219, 0.95)" }}
+      {/* Mobile: hamburger + logo */}
+      <div className="flex items-center justify-between p-4 md:hidden">
+        <button
+          onClick={() => setMobileMenuOpen((o) => !o)}
+          aria-label="Toggle menu"
         >
-          <ul className="space-y-4">
-            {["home", "about", "services", "projects", "contact"].map((key) => {
-              const href =
-                key === "home"
-                  ? "#"
-                  : key === "about"
-                  ? "#about-us"
-                  : key === "contact"
-                  ? "#contact-us"
-                  : `#${key}`;
-              return (
-                <li key={key}>
-                  <a
-                    href={href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-lg font-medium text-gray-700 hover:text-blue-600 block text-shadow-accent"
-                  >
-                    {t(`nav.${key}`)}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </SheetContent>
-      </Sheet>
+          <Menu className="h-6 w-6 text-gray-800" />
+        </button>
+        <a href="#">
+          <img src={logoTopBar} alt="Full Engineering Logo" className="h-10" />
+        </a>
+        <Button onClick={toggleLang}>
+          {i18n.language === "en"
+            ? t("language.toggle_es")
+            : t("language.toggle_en")}
+        </Button>
+      </div>
+
+      {/* Mobile menu panel with click-away close */}
+      {mobileMenuOpen &&
+        createPortal(
+          <div
+            className="fixed inset-0 bg-transparent z-40 md:hidden"
+            onClick={() => setMobileMenuOpen(false)} // close when clicking the background
+          >
+            <nav
+              className="absolute top-[60px] left-0 right-0 bg-white shadow-md z-50"
+              onClick={(e) => e.stopPropagation()} // prevent close when clicking inside nav
+            >
+              <ul className="flex flex-col p-4 space-y-2">
+                {["home", "about", "services", "projects", "contact"].map(
+                  (key) => {
+                    const href =
+                      key === "home"
+                        ? "#"
+                        : key === "about"
+                        ? "#about-us"
+                        : key === "contact"
+                        ? "#contact-us"
+                        : `#${key}`;
+                    return (
+                      <li key={key}>
+                        <a
+                          href={href}
+                          className="block text-lg text-center font-medium text-gray-700 hover:text-blue-600"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {t(`nav.${key}`)}
+                        </a>
+                      </li>
+                    );
+                  }
+                )}
+              </ul>
+            </nav>
+          </div>,
+          document.body
+        )}
 
       {/* Desktop / Tablet */}
       <div className="hidden md:flex items-center justify-between px-8 py-2">
         {/* Logo */}
         <div>
-          <img src={logoTopBar} alt="Full Engineering Logo" className="h-14" />
+          <a href="#">
+            <img
+              src={logoTopBar}
+              alt="Full Engineering Logo"
+              className="h-14"
+            />
+          </a>
         </div>
 
         {/* Nav links */}
