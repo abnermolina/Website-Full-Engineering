@@ -6,6 +6,7 @@ import hexagonDesign2 from "../assets/hexagons 4.png";
 import hexagonDesign3 from "../assets/hexagons 3.png";
 import liftMotorImg from "@/assets/liftingMotor.png";
 import valuesImg from "@/assets/valuesImg.png";
+import machineWork from "@/assets/machineWork.jpeg";
 
 export function AboutUs() {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ export function AboutUs() {
           {/* IMAGE + HEXAGON OVERLAY */}
           <div className="relative w-full overflow-visible">
             <img
-              src={liftImage}
+              src={machineWork}
               alt="Worker operating machinery"
               className="w-full rounded-lg shadow-lg"
             />
